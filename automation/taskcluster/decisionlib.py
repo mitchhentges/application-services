@@ -86,8 +86,8 @@ class Shared:
 
         # taskclusterProxy URLs:
         # https://docs.taskcluster.net/docs/reference/workers/docker-worker/docs/features
-        self.queue_service = taskcluster.Queue(options={"baseUrl": "http://taskcluster/queue/v1/"})
-        self.index_service = taskcluster.Index(options={"baseUrl": "http://taskcluster/index/v1/"})
+        # self.queue_service = taskcluster.Queue(options={"baseUrl": "http://taskcluster/queue/v1/"})
+        # self.index_service = taskcluster.Index(options={"baseUrl": "http://taskcluster/index/v1/"})
 
     def from_now_json(self, offset):
         """
@@ -220,7 +220,7 @@ class Task:
         )
 
         task_id = taskcluster.slugId().decode("utf8")
-        SHARED.schedule_task(task_id, queue_payload)
+        # SHARED.schedule_task(task_id, queue_payload)
         return task_id
 
     def find_or_create(self, index_path=None):
