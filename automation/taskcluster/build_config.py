@@ -76,7 +76,7 @@ def module_definitions():
 
         modules_defs.append({
             'name': name,
-            'publications': [Publication(publication['name'], publication['type'], version, project_path)
+            'publications': [Publication(publication['name'], PublicationType(publication['type']), version, project_path)
                              for publication in project['publications']],
             'artifacts': module_artifacts,
             'uploadSymbols': project.get('uploadSymbols', False),
