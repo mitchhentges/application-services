@@ -134,9 +134,18 @@ tasks:
                 description: Schedules the build and test tasks for Application Services.
         "tasks_for == 'github-release'":
           $let:
-            beetmover_worker_type: appsv-beetmover-v1
-            beetmover_bucket: maven-production
-            beetmover_bucket_public_url: https://maven.mozilla.org/
+            beetmover_worker_type:
+              $if: 'event.repository.html_url == "https://github.com/mozilla/application-services"'
+              then: appsv-beetmover-v1
+              else: appsv-beetmover-dev
+            beetmover_bucket:
+              $if: 'event.repository.html_url == "https://github.com/mozilla/application-services"'
+              then: maven-production
+              else: maven-staging
+            beetmover_bucket_public_url:
+              $if: 'event.repository.html_url == "https://github.com/mozilla/application-services"'
+              then: https://maven.mozilla.org/
+              else: https://maven-default.stage.mozaws.net/
             tag: ${event.release.tag_name}
             release_task_definition:
               payload:
