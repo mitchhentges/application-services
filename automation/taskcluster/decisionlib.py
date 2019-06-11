@@ -18,6 +18,7 @@ import datetime
 import hashlib
 import json
 import os
+from pprint import pprint
 import re
 import subprocess
 import sys
@@ -220,6 +221,7 @@ class Task:
             routes=routes,
             extra=self.extra,
         )
+        pprint(queue_payload)
 
         task_id = taskcluster.slugId().decode("utf8")
         SHARED.schedule_task(task_id, queue_payload)
