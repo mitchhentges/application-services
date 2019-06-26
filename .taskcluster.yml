@@ -139,7 +139,7 @@ tasks:
             $let:
               beetmover_worker_type:
                 $if: 'is_staging'
-                then: appsv-beetmover-dev
+                then: mhentges
                 else: appsv-beetmover-v1
               beetmover_bucket:
                 $if: 'is_staging'
