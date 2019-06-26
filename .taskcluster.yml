@@ -139,7 +139,7 @@ tasks:
             $let:
               beetmover_worker_type:
                 $if: 'is_staging'
-                then: appsv-beetmover-dev
+                then: mhentges
                 else: appsv-beetmover-v1
               beetmover_bucket:
                 $if: 'is_staging'
@@ -172,7 +172,7 @@ tasks:
                 - scopes:
                   # So that we can publish on Maven using beetmover
                   - project:mozilla:application-services:releng:beetmover:bucket:${beetmover_bucket}
-                  - queue:create-task:${tasks_priority}:scriptworker-prov-v1/${beetmover_worker_type}
+                  - queue:create-task:${tasks_priority}:mhentges-provisioner/${beetmover_worker_type}
                 - metadata:
                     name: Application Services - Decision task (${tag})
                     description: Build and publish release versions.
