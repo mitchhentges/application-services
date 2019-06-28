@@ -277,7 +277,7 @@ class Task:
 class BeetmoverTask(Task):
     def __init__(self, name):
         super().__init__(name)
-        self.provisioner_id = "scriptworker-prov-v1"
+        self.provisioner_id = "mhentges-provisioner"
         self.app_name = None
         self.app_version = None
         self.upstream_artifacts = []
