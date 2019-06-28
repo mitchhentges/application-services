@@ -163,6 +163,15 @@ tasks:
               $mergeDeep:
                 - {$eval: 'default_task_definition'}
                 - {$eval: 'release_task_definition'}
+                - $if: 'is_staging'
+                  then:
+                    scopes:
+                      - project:mozilla:application-services:releng:signing:cert:dep-signing
+                      - queue:create-task:scriptworker-prov-v1/appsv-signing-dep-v1
+                  else:
+                    scopes:
+                      - project:mozilla:application-services:releng:signing:cert:release-signing
+                      - queue:create-task:scriptworker-prov-v1/appsv-signing-v1
                 - payload:
                     env:
                       IS_STAGING: ${is_staging}
