@@ -135,7 +135,7 @@ tasks:
         "tasks_for == 'github-release' && event['action'] == 'published'":
           $let:
             is_staging:
-              $if: 'event.repository.html_url != "https://github.com/mozilla/application-services"'
+              $if: 'event.repository.html_url != "https://github.com/mitchhentges/application-services"'
               then: true
               else: false
           in:
