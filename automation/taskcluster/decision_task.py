@@ -379,7 +379,7 @@ class DeployEnvironment(Enum):
 def main(task_for):
     if task_for == "github-pull-request":
         # TODO don't use TASK_OWNER, get from parameters instead
-        pr(os.environ["MOZILLA_PULL_REQUEST_TITLE"], os.environ["TASK_OWNER"] in FULL_CI_GH_USERS)
+        pr(os.environ["APPSERVICES_PULL_REQUEST_TITLE"], os.environ["TASK_OWNER"] in FULL_CI_GH_USERS)
     elif task_for == "github-push":
         master_push()
     elif task_for == "github-release":
