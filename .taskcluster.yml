@@ -117,11 +117,11 @@ tasks:
                 # run-task uses these to check out the source; the inputs
                 # to `mach taskgraph decision` are all on the command line.
                 $merge:
-                  - MOZILLA_BASE_REPOSITORY: '${baseRepoUrl}'
-                    MOZILLA_HEAD_REPOSITORY: '${repoUrl}'
-                    MOZILLA_HEAD_REF: '${head_branch}'
-                    MOZILLA_HEAD_REV: '${head_sha}'
-                    MOZILLA_REPOSITORY_TYPE: git
+                  - APPSERVICES_BASE_REPOSITORY: '${baseRepoUrl}'
+                    APPSERVICES_HEAD_REPOSITORY: '${repoUrl}'
+                    APPSERVICES_HEAD_REF: '${head_branch}'
+                    APPSERVICES_HEAD_REV: '${head_sha}'
+                    APPSERVICES_REPOSITORY_TYPE: git
                     TASKGRAPH_BASE_REPOSITORY: https://hg.mozilla.org/ci/taskgraph
                     TASKGRAPH_HEAD_REPOSITORY: https://hg.mozilla.org/ci/${taskgraph.branch}
                     TASKGRAPH_HEAD_REV: ${taskgraph.revision}
