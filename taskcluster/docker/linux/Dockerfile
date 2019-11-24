@@ -8,7 +8,7 @@ FROM ubuntu:bionic-20180821
 
 MAINTAINER Edouard Oger "eoger@mozilla.com"
 
-echo "trigger rebuild"
+RUN echo "trigger rebuild"
 
 # Add worker user
 
