@@ -35,7 +35,7 @@ def build_task(config, tasks):
             primary_extensions = (".pom", ".aar", "-sources.jar") if publication["type"] == "aar" else (".pom", ".jar")
             extensions = [package_ext + digest_ext for package_ext in primary_extensions for digest_ext in ("", ".sha1", ".md5")]
             for extension in extensions:
-                artifact_filename = "{}-{}{}".format(name, version, extension)
+                artifact_filename = "{}-{}{}".format(publication["name"], version, extension)
                 artifacts.append({
                     "name": "public/build/{}".format(artifact_filename),
                     "path": "/builds/worker/checkouts/src/build/maven/org/mozilla/appservices/{}/{}/{}".format(name, version, artifact_filename),
